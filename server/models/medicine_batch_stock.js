@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+const { Schema } = mongoose;
 const MedicineBatchStockSchema = new Schema({
   Batch_Stock_ID: { type: Number, unique: true },
   Medicine_Code: { type: Schema.Types.ObjectId, ref: 'Medicine', required: true },

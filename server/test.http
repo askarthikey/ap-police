@@ -1,0 +1,18 @@
+###get all manufacturers
+GET http://localhost:6100/manufacturer-api/manufacturers
+
+###post a new manufacturer
+POST http://localhost:6100/manufacturer-api/register_manufacturer
+Content-Type: application/json
+
+{
+  "Manufacturer_ID": 102,
+  "Manufacturer_Name": "BioZen Labs Pvt Ltd",
+  "Address": "18/4C Pharma Park, Guntur, Andhra Pradesh, India",
+  "Contact_No": "+91-9845123456",
+  "Email_ID": "info@biozenlabs.in"
+}
+
+
+###get a manufacturer by id
+GET http://localhost:6100/manufacturer-api/manufacturer/101

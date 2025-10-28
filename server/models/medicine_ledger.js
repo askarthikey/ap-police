@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+const { Schema } = mongoose;
 const MedicineLedgerSchema = new Schema({
   Ledger_Entry_ID: { type: Number, unique: true },
   Batch_Stock_ID: { type: Schema.Types.ObjectId, ref: 'MedicineBatchStock', required: true },

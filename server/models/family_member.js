@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+const { Schema } = mongoose;
 const FamilyMemberSchema = new Schema({
   Family_ID: { type: Number, unique: true },
   Employee_ABS_NO: { type: Schema.Types.ObjectId, ref: 'Employee', required: true },

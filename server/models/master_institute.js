@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 const InstituteSchema = new Schema({
   Institute_ID: { type: Number, unique: true },
   Institute_Name: { type: String, required: true, unique: true },

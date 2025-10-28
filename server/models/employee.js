@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const { Schema } = mongoose;
 const EmployeeSchema = new Schema({
   ABS_NO: { type: String, required: true, unique: true },
   Name: { type: String, required: true },

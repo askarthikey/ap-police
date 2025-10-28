@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const { Schema } = mongoose;
 const ManufacturerSchema = new Schema({
   Manufacturer_ID: { type: Number, unique: true },
   Manufacturer_Name: { type: String, required: true, unique: true },

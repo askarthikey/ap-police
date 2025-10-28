@@ -7,6 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// import your router here (adjust the path as needed)
+const manufacturerApp = require('./apis/manufacture_api'); 
+
 // Example route
 app.get('/', (req, res) => {
   res.send('Server is running!');
@@ -16,6 +19,9 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
+
+// Use manufacturer routes
+app.use('/manufacturer-api', manufacturerApp);
 
 // Start server
 const PORT = process.env.PORT || 5200;

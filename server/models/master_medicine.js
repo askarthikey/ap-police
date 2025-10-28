@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const { Schema } = mongoose;
 const MedicineSchema = new Schema({
   Medicine_Code: { type: String, required: true, unique: true },
   Manufacturer_ID: { type: Schema.Types.ObjectId, ref: 'Manufacturer', required: true },

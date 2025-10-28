@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const { Schema } = mongoose;
 const RegistrationSchema = new Schema({
   Reg_No: { type: String, required: true, unique: true },
   Institute_ID: { type: Schema.Types.ObjectId, ref: 'Institute', required: true },
