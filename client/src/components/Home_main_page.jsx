@@ -13,6 +13,12 @@ function Home_main_page() {
             >
               Register to Manufacturer
             </Link>
+            <Link
+              className="nav-link text-blue-600 font-semibold hover:text-blue-800 transition-all"
+              to="/institutes/register"
+            >
+              Register to Institute
+            </Link>
           </li>
         </ul>
       </nav>
