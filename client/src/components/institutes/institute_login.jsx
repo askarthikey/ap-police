@@ -35,7 +35,7 @@ const InstituteLogin = () => {
 
       // Redirect to homepage
       setTimeout(() => {
-        navigate("/institute-homepage");
+        navigate("/institutes/home");
       }, 1500);
     } catch (err) {
       if (err.response) {
