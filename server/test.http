@@ -6,13 +6,22 @@ POST http://localhost:6100/manufacturer-api/register_manufacturer
 Content-Type: application/json
 
 {
-  "Manufacturer_ID": 102,
-  "Manufacturer_Name": "BioZen Labs Pvt Ltd",
-  "Address": "18/4C Pharma Park, Guntur, Andhra Pradesh, India",
-  "Contact_No": "+91-9845123456",
-  "Email_ID": "info@biozenlabs.in"
+  "Manufacturer_Name": "TechForge Industries",
+  "Contact_No": "9876543210",
+  "Email_ID": "support@techforge.com",
+  "password": "Forge@123",
+  "Address": {
+    "Street": "Sector 9, Industrial Area",
+    "District": "Hyderabad",
+    "State": "Telangana",
+    "Pincode": "500072"
+  }
 }
 
 
-###get a manufacturer by id
-GET http://localhost:6100/manufacturer-api/manufacturer/101
+
+###get a manufacturer by name
+GET http://localhost:6100/manufacturer-api/manufacturer/name/siri
+
+###delete a manufacturer by id
+DELETE http://localhost:6100/manufacturer-api/manufacturer_delete/1
