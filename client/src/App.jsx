@@ -11,6 +11,8 @@ import Institute_home from "./components/institutes/institute_home";
 import EmployeeRegistration from "./components/employee/EmployeeRegistration";
 import FamilyMemberRegistration from "./components/employee/FamilyMemberRegistration";
 import MedicineRequestForm from "./components/medicine/MedicineRequestForm";
+import Institutes_placeorder from "./components/institutes/institutes_placeorder";
+import InstituteProfile from "./components/institutes/institute_profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -55,7 +57,13 @@ function App() {
     },
     {
       path: "/medicine/request",
-      element: <MedicineRequestForm />,
+      element: <MedicineRequestForm />,  
+    },{
+      path:"institutes/placeorder",
+      element:<Institutes_placeorder/>
+    },{
+      path:"/institute/profile",
+      element:<InstituteProfile/>
     }
   ]);
 

@@ -211,6 +211,16 @@ const InstituteRegister = () => {
               {loading ? "Registering..." : "Register"}
             </button>
           </div>
+
+          {/* Login Link */}
+          <div className="text-center mt-3">
+            <p className="mb-0">
+              Already registered?{" "}
+              <a href="#" onClick={() => navigate("/instituteS/login")} className="text-primary text-decoration-none">
+                Login here
+              </a>
+            </p>
+          </div>
         </form>
 
         {/* Message */}
