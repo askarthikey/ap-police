@@ -90,6 +90,4 @@ instituteApp.post(
   })
 );
 
-
-
 module.exports = instituteApp;
