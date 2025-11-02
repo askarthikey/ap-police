@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ManufactureLoginContextObj } from "./LoginContext";
 import { useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaIndustry } from "react-icons/fa";
@@ -10,13 +10,34 @@ function Login_manu() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // ✅ Redirect if already logged in
+  useEffect(() => {
+    const storedUser = localStorage.getItem("manufacturer");
+  
+    if (storedUser && storedUser !== "undefined") {
+      try {
+        const parsed = JSON.parse(storedUser);
+  
+        // ✅ Only redirect if manufacturer has valid name and id
+        if (parsed.Manufacturer_Name && parsed._id) {
+          navigate(`/manufacturer-home/${parsed.Manufacturer_Name}`);
+        } else {
+          localStorage.removeItem("manufacturer");
+        }
+      } catch {
+        localStorage.removeItem("manufacturer");
+      }
+    }
+  }, [navigate]);
+  
+
   async function onSubmit(data) {
     setIsSubmitting(true);
     try {
       await handleLogin(data, navigate);
     } catch (err) {
       console.error("Login error:", err);
-      alert("Login failed");
+      alert("⚠️ Login failed");
     } finally {
       setIsSubmitting(false);
     }

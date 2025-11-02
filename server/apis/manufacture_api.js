@@ -68,4 +68,6 @@ manufacturerApp.delete("/manufacturer_delete/:id", async (req, res) => {
   }
 });
 
+
+
 module.exports = manufacturerApp;

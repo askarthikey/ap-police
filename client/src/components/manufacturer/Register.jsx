@@ -35,7 +35,9 @@ function Register_manu() {
         "http://localhost:6100/manufacturer-api/register_manufacturer",
         formattedData
       );
+      
       alert(`Registration successful for ${response.data.Manufacturer_Name}`);
+      localStorage.removeItem("manufacturer");
       navigate("/manufacturer-login");
     } catch (error) {
       console.error("Registration error:", error);
@@ -250,11 +252,13 @@ function Register_manu() {
                   <div className="text-center mt-3 small">
                     Already registered?{" "}
                     <Link
-                      to="/manufacturer-login"
-                      className="text-decoration-none fw-semibold"
-                    >
-                      Login here
-                    </Link>
+  to="/manufacturer-login"
+  onClick={() => localStorage.removeItem("manufacturer")}
+  className="text-decoration-none fw-semibold"
+>
+  Login here
+</Link>
+
                   </div>
                 </form>
               </div>

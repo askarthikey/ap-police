@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const AutoIncrement = require("mongoose-sequence")(mongoose);
+const { Schema } = mongoose;
+
 
 const ManufacturerSchema = new mongoose.Schema({
   Manufacturer_ID: {
@@ -29,9 +31,37 @@ const ManufacturerSchema = new mongoose.Schema({
     State: { type: String, required: true },
     Pincode: { type: String, required: true }
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
+  Orders: {
+    type: [
+      {
+        Institute_ID: {
+          type: Schema.Types.ObjectId, ref: 'Institute', required: true ,
+          default: "N/A"
+        },
+        Medicine_ID: {
+          type: Schema.Types.ObjectId, ref: 'Medicine', required: true,
+          default: "Unknown"
+        },
+        Quantity: {
+          type: Number,
+          default: 0,
+          min: 0
+        },
+        Order_Date: {
+          type: Date,
+          default: Date.now
+        },
+        Delivery_Status: {
+          type: String,
+          enum: ["Pending", "Dispatched", "Delivered", "Cancelled"],
+          default: "Pending"
+        },
+        Remarks: {
+          type: String,
+          default: "No remarks"
+        }
+      }
+    ]
   }
 });
 
