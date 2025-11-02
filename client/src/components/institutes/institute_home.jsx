@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { AiOutlineMenu } from "react-icons/ai";
 
 const Institute_home = () => {
   const navigate = useNavigate();
@@ -13,11 +12,12 @@ const Institute_home = () => {
 
   const handleSignout = () => {
     localStorage.removeItem("institute");
-    navigate("/institute/login");
+    navigate("/institutes/login");
   };
 
   const handleOrderClick = () => {
-    navigate("/institute/place-order");
+    // ✅ Corrected route to match nested route definition
+    navigate("/institutes/home/placeorder");
   };
 
   return (
@@ -106,10 +106,15 @@ const Institute_home = () => {
         <div className="text-center mt-4">
           <button
             className="btn btn-primary px-4 py-2 rounded-3"
-            onClick={handleOrderClick}
+            onClick={()=>navigate("/institutes/placeorder")}
           >
             ➕ Place New Order
           </button>
+        </div>
+
+        {/* ✅ Outlet for nested routes */}
+        <div className="mt-5">
+          <Outlet />
         </div>
       </div>
     </div>

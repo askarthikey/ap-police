@@ -8,6 +8,8 @@ import Institutes_list from "./components/manufacturer/Institutes_list";
 import InstituteRegister from "./components/institutes/institute_registration";
 import InstituteLogin from "./components/institutes/institute_login";
 import Institute_home from "./components/institutes/institute_home";
+import Institutes_placeorder from "./components/institutes/institutes_placeorder";
+import InstituteProfile from "./components/institutes/institute_profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,7 +42,14 @@ function App() {
       element:<InstituteLogin/>
     },{
       path:"/institutes/home",
-      element:<Institute_home/>
+      element:<Institute_home/>,
+      
+    },{
+      path:"institutes/placeorder",
+      element:<Institutes_placeorder/>
+    },{
+      path:"/institute/profile",
+      element:<InstituteProfile/>
     }
   ]);
 
