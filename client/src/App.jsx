@@ -7,7 +7,7 @@ import Register_manu from "./components/manufacturer/Register";
 import InstituteRegister from "./components/institutes/institute_registration";
 import Add_medicine from "./components/manufacturer/Add_medicine";
 import Medicines_table from "./components/manufacturer/Medicines_table";
-import Profile_manu from "./components/manufacturer/Profile";
+import Profile_manu from "./components/manufacturer/Profile_manu";
 import EmployeeRegistration from "./components/employee/EmployeeRegistration";
 import FamilyMemberRegistration from "./components/employee/FamilyMemberRegistration";
 
